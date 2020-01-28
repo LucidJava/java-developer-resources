@@ -5,6 +5,9 @@ If you have something useful to add, please create a pull request.
 
 
 ## Core Java Interview Questions
+***
+### Java Platform
+____
 * **What's the difference between JDK, JRE and the JVM?**
 
 	`JDK is a superset of JRE. JRE is a superset of JVM.`
@@ -25,8 +28,18 @@ If you have something useful to add, please create a pull request.
 
   It's also something that searches classes for us.
 
-  System class loader -  Looks in the CLASSPATH
+  `System class loader -  Looks in the CLASSPATH`
 
-  Extension class loader - Looks in jre, ext, lib folders
+  `Extension class loader - Looks in jre, ext, lib folders`
 
-  Bootstrap class loader - Loads all Java core files
+  `Bootstrap class loader - Loads all Java core files`
+
+### Advanced OOP
+____
+
+* **Define polymorphism?**
+	Polymorphism is same code giving different behaviour.
+	
+* **What's the use of `instanceof` operator?**
+	Checks if an object is of a particular type.
+	
