@@ -33,30 +33,32 @@ ____
 
   `Extension class loader - Looks in jre, ext, lib folders`
 
-  `Bootstrap class loader - Loads all Java core files`
+  `Bootstrap class loader - Loads all Java core files`  
+  
 
 ### Advanced OOP
 ____
 
 * **Define polymorphism?**  
-		Polymorphism is same code giving different behaviour.
+		Polymorphism is same code giving different behaviour.  
+		
 		Run-time polymorphism: Method overriding
 		Compile-time polymorphism: Method overloadling
+
+* **What's the philosophy behind Encapsulation?**  
+		Even if the internal implementation changes, the external classes will not be affected.
 	
 * **What's the use of `instanceof` operator?**  
 		Checks if an object is of a particular type.
 		
 * **What is coupling?**  
-		- Coupling is a measure of how much a class is dependent on other classes.
-		- We should keep the classes as loosely coupled as possible.
-		- We can use POJOs with private member variables and public methods which act on the variables.
+		Coupling is a measure of how much a class is dependent on other classes.
+		We should keep the classes as loosely coupled as possible.
+		We can use POJOs with private member variables and public methods which act on the variables.
 	
 * **What is cohesion?**  
 		Cohesion is a measure of how related the responsibilities of a class are.
 		Good classes are desiged to be highly cohessive.
-
-* **What's the philosophy behind Encapsulation?**  
-		Even if the internal implementation changes, the external classes will not be affected.
 		
 * **Why do we use inner classes?**  
 		Cohession is a measure of how related the responsibilities of a class are.
