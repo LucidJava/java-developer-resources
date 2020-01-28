@@ -5,7 +5,7 @@ If you have something useful to add, please create a pull request.
 
 
 ## Core Java Interview Questions
-* **What's the difference between JDK, JRE and the JVM?*
+* **What's the difference between JDK, JRE and the JVM?**
 
 	`JDK is a superset of JRE. JRE is a superset of JVM.`
 	
