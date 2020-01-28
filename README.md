@@ -4,8 +4,9 @@ If you have something useful to add, please create a pull request.
 
 
 
-## Core Java Interview Questions
-***
+## Core Java Interview Questions  
+
+
 ### Java Platform
 ____
 * **What's the difference between JDK, JRE and the JVM?**
