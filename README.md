@@ -40,7 +40,7 @@ ____
 ____
 
 * **Define polymorphism?**  
-		Polymorphism is same code giving different behaviour.  
+    > Polymorphism is same code giving different behaviour.  
 		
 		    * Compile-time polymorphism aka Method overloadling is with methods in the same class sharing same name, but a varying number/type/order of arguments.
 		
