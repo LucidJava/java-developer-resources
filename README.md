@@ -5,7 +5,13 @@ If you have something useful to add, please create a pull request.
 
 
 ## Core Java Interview Questions
-* **What's the difference between JDK, JRE and the JVM?**
+* **What's the difference between JDK, JRE and the JVM?*
+
+	`JDK is a superset of JRE. JRE is a superset of JVM.`
+	
+	JDK is the complete development environment that includes Java Compiler, Interpreter and other tools
+	JRE is the runtime environment you need to run your Java program. This includes JVM in itself.
+	JVM is the interpeter for your byte code. It comes along with a JIT compiler it uses to optimize the interpretation.
 
   `JDK = javac + jar + debugging tools + javap + JRE`
 
