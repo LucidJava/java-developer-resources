@@ -39,8 +39,8 @@ ____
 ____
 
 * **Define polymorphism?**
-	Polymorphism is same code giving different behaviour.
+		Polymorphism is same code giving different behaviour.
 	
 * **What's the use of `instanceof` operator?**
-	Checks if an object is of a particular type.
+		Checks if an object is of a particular type.
 	
