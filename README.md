@@ -38,7 +38,7 @@ ____
 ### Advanced OOP
 ____
 
-* **Define polymorphism?**
+* **Define polymorphism?**  
 		Polymorphism is same code giving different behaviour.
 		Run-time polymorphism: Method overriding
 		Compile-time polymorphism: Method overloadling
