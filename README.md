@@ -47,9 +47,9 @@ ____
 		Run-time polymorphism aka Method overriding is with methods in the parent vs child class sharing the same name and signature.
 		
 * **What are the rules for method overloading?**  
-		* Overloading is only possible by creating two methods with same name and different signature. Signature includes the number, type and order of arguments.
-		* Two methods with same name and signature, and a different return type - are NOT overloaded
-		* Two methods with same name and signature, and a different access modifier - are NOT overloaded
+			* Overloading is only possible by creating two methods with same name and different signature. Signature includes the number, type and order of arguments.
+			* Two methods with same name and signature, and a different return type - are NOT overloaded
+			* Two methods with same name and signature, and a different access modifier - are NOT overloaded
 
 * **What are the rules for method overriding?**  
 		* A method of a class can only be overloaded in its sub-class.
