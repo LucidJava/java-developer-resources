@@ -42,9 +42,9 @@ ____
 * **Define polymorphism?**  
     > Polymorphism is same code giving different behaviour.  
 		
-		    * Compile-time polymorphism aka Method overloadling is with methods in the same class sharing same name, but a varying number/type/order of arguments.
+    * Compile-time polymorphism aka Method overloadling is with methods in the same class sharing same name, but a varying number/type/order of arguments.
 		
-		    * Run-time polymorphism aka Method overriding is with methods in the parent vs child class sharing the same name and signature.
+    * Run-time polymorphism aka Method overriding is with methods in the parent vs child class sharing the same name and signature.
 		
 * **What are the rules for method overloading?**  
     * Overloading is only possible by creating two methods with same name and different signature. Signature includes the number, type and order of arguments.
