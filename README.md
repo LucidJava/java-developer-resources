@@ -6,6 +6,9 @@ If you have something useful to add, please create a pull request.
 
 ## Core Java Interview Questions  
 
+Note: These questions serve as a quick reference or a refresher of whatever existing knowledge you have. 
+This is not a place for learning exhaustively.  
+
 
 ### Java Platform
 ____
@@ -55,7 +58,7 @@ ____
     * A method of a class can only be overloaded in its sub-class.
     * An overriding method should have same name, signature annd return type as the overriden method.
     * An overriding method cannot reduce or increase the access of the overriden method.
-    * An overriding method cannot throw a higher exception than that of the overriden one.
+    * An overriding method cannot throw a higher exception than that of the overriden one. You can throw something lower or you can skip throwing.
 		
 * **What's the philosophy behind Encapsulation?**  
 		Even if the internal implementation changes, the external classes will not be affected.
@@ -112,9 +115,9 @@ ____
 
     The case is same for `toLowerCase()` and `toUpperCase()`
 
-- **Where are String values stored in memory?**
+- **Where exactly are String values stored in memory?**
 
-    In String Constant Pool, an area inside the Heap memory. 
+    In **String Constant Pool**, an area inside the Heap memory. 
 
     If the compiler finds a string literal, it checks in the pool. If exists, it is reused.
 
@@ -126,7 +129,7 @@ ____
 
 - **Difference between String and StringBuffer?**
 
-    Objects of String type are immutable. 
+    Objects of String type are immutable. StringBuffer is a mutable type.
 
     Both String and StringBuffer are thread-safe.
 
@@ -139,3 +142,116 @@ ____
     Both StringBuffer and StringBuilder are mutable alternatives to String.
 
     When your code has to do a lot of concatenations, you should use StringBuilder by default, unless you are sure you need thread-safety.
+
+- **Why String is immutable in Java?**    
+    > Classes which are key to Java's security commitment are final, so that no can change their behaviour and game with Java platform - James Goslig
+ 
+- **What design pattern does String follow?**
+    > String's Constant Pool follows Flyweight design pattern.
+    Flyweight design pattern is about reducing the number of objects created and reducing the memory footprint. 
+    String achieves this by resuing objects with the Constant pool.
+    
+
+### Exception Handling
+____
+
+- **What's the difference between `ClassNotFoundException` and `NoClassDefFoundError?`**   
+	Both of these occure when JVM couldn't load a class.
+	But `ClassNotFoundException` occurs when you can't find a class definition at runtime, for instance when you try to load a class using Class.forName()
+	And `NoClassDefFoundError` occurs when a specific class is present at compile time and missing at run time. 
+	For instance you java file generates two class files when compiled, and you delete on of the class files, and when you try to run the app you face this error.
+	
+	Also, the former is of type `Exception`, the later is a child of `Error`.
+
+
+## Spring Boot Interview Questions  	
+
+- **Advantages of Springboot?**
+    -Spring Boot provides us _*starter*_ dependencies, which simplifies our build configuration
+    -The @EnableAutoConfiguration feature does magical detection and configuration of beans we need
+    -Comes with an embedded container for Jetty, Tomcat, Undertow, Netty - we don't have to deploy WAR files
+    -Production ready features like health checks, centralized configurations, metrics
+    -Springboot makes it very easy to work with Spring Profiles. Enter *Profile-specific property files*.
+    -We have a Spring Initializer tool to boot our projects from projects hassle-free.
+
+- **What's the advantage of `@EnableAutoConfiguration` ?**    
+    This annotation intelligently figures out and configures the beans you will likely need based on your classpath.
+    If you have a hibernate/jpa dependency in the build file and a configuration file/class in the source for hibernate, 
+    it automatically detects and gives us a SessionFactory / EntityManager bean which we can autowire and use in our applications.
+
+- **How do you configure JPA for Couchbase?**
+    *We should first include the dependency for Spring Data Couchbase `spring-boot-starter-data-couchbase` in our build file. 
+    *Create an `@configuration` class for couchbase. This class should extend `AbstractCouchbaseCofiguration` and override `getBooststrapHosts()`, `getBucketName()` and `getBucketPassword()` methods
+    *Create an entity class (called Documents in couchbase) that will have fields including an  `@Id` field.
+    *Create an `@Respository` interface that extends `CrudRepository` and declare methods you need. This can be autowired and used in your DAO classes.
+    *Alternatively, you can create a `@Bean` definition for `Bucket` in you configuration class, and can autowire it in your DAO classes to directly operate on the documents.
+
+      
+## SQL Interview Questions 
+
+- **What is an inner join?**
+	Inner join fetches only the matching records from two tables.
+	
+- **Query to get the nth highest salary of an employee?**
+	`SELECT DISTINCT salary from employee ORDER BY salary DESC LIMIT 1 OFFSET (n-1)`
+	
+## System Design Interview Questions 
+
+- **Difference between a Queue and a Topic?**
+	Topics are for the publisher-subscriber model, while queues are for point-to-point.
+	
+- **Difference between a XA and non-XA datasources?**
+	An XA datasource deals with global transactions, which often handle multiple resources.
+	A non-XA transaction often involves a single resource.
+	
+	XA gets involved when you want to work with multiple resources - 2 or more databases, a database and a JMS connection, all of those plus maybe a JCA resource - all in a single transaction. 
+	In this scenario, you'll have an app server like Websphere or Weblogic or JBoss acting as the Transaction Manager, and your various resources (Oracle, Sybase, IBM MQ JMS, SAP, whatever) acting as transaction resources. 
+	Your code can then update/delete/publish/whatever across the many resources. When you say "commit", the results are commited across all of the resources. 
+
+- **Why do we use ramp up period in Jmeter?**	
+	Ramp up period tells the tool how long it should take to create the total number of threads.
+	If you have 100 users with a ramp up of 10 seconds, then JMeter creates 10 theads per each second.
+	
+
+## Agile Interview Questions 
+
+- **What's your role in a Scrum team?**
+	[subjective] I am part of the development team, and I work directly with the client.
+	
+- **What's a User Story?**
+	A high level definition of the requirement, containing just enough information so that the developers can produce a reasonable estimate of the effort to implement it.	
+	
+- **What's Sprint velocity?**
+	A metric that tells the amount of work a team can handle in a single Sprint.
+	
+- **What's Sprint burndown chart?**
+	A burndown chart is a graphical representation of work left to vs time.
+	
+
+## Microservices Interview Questions 
+
+- **What are microservices?**	
+	Microservices is an architecture style where small, autonomous services work together.
+	
+- **What are the principles of microservices?**	
+    *Single responsibility
+    *Built around business
+    *You build it, you own it
+    *Infrastructure automation
+    *Desin for failure
+    
+- **What are the benefits of microservices?**	
+    *We can choose *fit for purpose architecture* with microservices
+    *Microservices enable selective scalability
+    *It is possible to change and update technology for each microservice individually
+    *Enable smaller, focused agile teams for development
+    *We have smaller, comprehensive codebases
+    
+- **What are the challenges of microservices?**	
+    *As the application grows bigger, we'll need to manage a lot of microservices.
+    *Each microservices may need its own deployment environment and resources
+    *We need more skilled developers to handle distributed application complexities
+
+- **How do you configure microservices in your application?**	   
+ 
+    
